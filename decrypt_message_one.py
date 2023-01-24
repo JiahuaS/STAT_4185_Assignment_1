@@ -41,3 +41,10 @@ encrypted_message = encrypted_file.readline()
 encrypted_file.close()
 
 # Write code below
+decipher = {b:a for a,b in cipher.items()}
+split_message = [encrypted_message[i] for i in range(len(encrypted_message))]
+decrypted_message_list = []
+for i in split_message:
+    decrypted_message_list.append(decipher[i])
+decrypted_message = ''.join(decrypted_message_list)
+print(decrypted_message)
